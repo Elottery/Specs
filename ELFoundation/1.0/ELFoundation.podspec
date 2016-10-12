@@ -17,9 +17,6 @@ spec.source_files = [
 
 spec.frameworks = 'SystemConfiguration','CoreGraphics','CoreTelephony','Security','CoreLocation','JavaScriptCore'
 
-
-spec.header_dir = 'ELFoundation/Classes/ThirdLib/TencentOpenAPI.framework/Headers/*.h'
-
 spec.libraries  = 'iconv','sqlite3','stdc++','z'
 
 spec.vendored_frameworks = 'ELFoundation/Classes/ThirdLib/TencentOpenAPI.framework'

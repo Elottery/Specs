@@ -15,12 +15,13 @@ spec.header_dir = 'ELFoundation'
 
 
 spec.user_target_xcconfig = { 'OTHER_LDFLAGS' => '-fobjc-arc',
-                              'FRAMEWORK_SEARCH_PATHS'=>'${PODS_ROOT}/../../ELFoundation/Classes/ThirdLib'}
+                              'FRAMEWORK_SEARCH_PATHS'=>'${PODS_ROOT}/../../ELFoundation/Classes/ThirdLib',
+                              'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'}
 spec.dependency 'HYFileManager'
 
 spec.subspec 'ELNetworking' do |cs|
     cs.source_files = 'ELFoundation/Classes/ELNetworking/*.{h,m}', 'ELFoundation/Classes/ELBaseService/*.{h,m}'
-    cs.user_target_xcconfig = { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES' }
+#cs.pod_target_xcconfig = { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES' }
     cs.dependency 'AFNetworking', '~> 3.1.0'
     cs.dependency 'JSONModel', '~> 1.2.0'
     cs.dependency 'ELFoundation/ELUtils'

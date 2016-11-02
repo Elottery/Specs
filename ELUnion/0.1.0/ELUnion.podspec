@@ -56,7 +56,7 @@ Pod::Spec.new do |spec|
         cs.resources    = ['ELUnion/ELUIKit/Assets/ELShareActionSheetCell.xib',
         'ELUnion/ELUIKit/Assets/ELCommonBetSelectionView/*.xib',
         'ELUnion/ELUIKit/Assets/ELScrollTitleCell.xib','ELUnion/ELUIKit/Assets/*.lproj']
-
+        cs.public_header_files = 'ELUnion/ELUIKit/Classes/ConstantsColors.h'
         cs.source_files =  ['ELUnion/ELUIKit/Classes/ConstantsColors.h',
         'ELUnion/ELUIKit/Classes/Category/*.{h,m}',
         'ELUnion/ELUIKit/Classes/VIEW/ELLoadingView.{h,m}',

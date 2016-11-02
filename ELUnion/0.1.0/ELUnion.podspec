@@ -14,7 +14,6 @@ Pod::Spec.new do |spec|
     spec.default_subspec = 'ELUIKit'
     spec.subspec 'ELFoundation' do |cs|
         cs.prefix_header_contents = '#import <Foundation/Foundation.h>'
-        cs.header_dir = 'ELFoundation'
         cs.frameworks = 'CoreData'
         cs.user_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC -all_load','CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'}
         cs.source_files = 'ELUnion/ELFoundation/Classes/**/*.{h,m}'
@@ -51,37 +50,11 @@ Pod::Spec.new do |spec|
     end
 
     spec.subspec 'ELUIKit' do |cs|
-        cs.header_dir = 'ELUIKit'
         cs.prefix_header_contents = '#import <UIKit/UIKit.h>'
         cs.resources    = ['ELUnion/ELUIKit/Assets/ELShareActionSheetCell.xib',
         'ELUnion/ELUIKit/Assets/ELCommonBetSelectionView/*.xib',
         'ELUnion/ELUIKit/Assets/ELScrollTitleCell.xib','ELUnion/ELUIKit/Assets/*.lproj']
-        cs.public_header_files = 'ELUnion/ELUIKit/Classes/ConstantsColors.h'
-        cs.source_files =  ['ELUnion/ELUIKit/Classes/ConstantsColors.h',
-        'ELUnion/ELUIKit/Classes/Category/*.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEW/ELLoadingView.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEW/ELNavigationBar.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEW/ELProgressView.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEW/ELTabbar.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEW/ELTabbarItem.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEW/ELTabbarItemView.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEW/ELActionSheet/*.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEW/ELAlertView/*.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEW/ELCommonBetSelectionView/*.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEW/ELGridView/*.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEW/ELPaoMaDeng/*.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELBaseTabbarController.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELBaseNavigationController.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELBaseViewController.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELBaseTableViewController.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELBasePageViewController.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELCursourView.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELScrollTitleBar.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELScrollTitleBarFlowLayout.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELScrollTitleCell.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELContainerViewController.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/TOCropViewController/**/*.{h,m}']
-
+        cs.source_files =  ['ELUnion/ELUIKit/Classes/**/*.{h,m}']
         cs.dependency      'ELUnion/ELFoundation'
         cs.dependency      'SDWebImage'
         cs.dependency      'DYMRollingBanner', '~> 2.1.7'

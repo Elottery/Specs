@@ -36,6 +36,7 @@ Pod::Spec.new do |spec|
             css.library = 'WeChatSDK'
             css.preserve_paths = 'ELUnion/ELFoundation/Lib/libWeChatSDK.a'
             css.vendored_library  = 'ELUnion/ELFoundation/Lib/libWeChatSDK.a'
+            css.user_target_xcconfig = {'LIBRARY_SEARCH_PATHS' => '${POD_ROOT}/ELUnion/ELUnion/ELFoundation/Lib'}
         end
         cs.subspec 'BaiduMob' do |css|
             css.library = 'BaiduMobStat'
@@ -79,7 +80,7 @@ Pod::Spec.new do |spec|
         'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELScrollTitleCell.{h,m}',
         'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELContainerViewController.{h,m}']
         cs.dependency      'ELUnion/ELFoundation'
-        cs.dependency      'SDWebImage', '~> 3.8.1'
+        cs.dependency      'SDWebImage'
         cs.dependency      'DYMRollingBanner', '~> 2.1.7'
         cs.dependency      'TOCropViewController'
         cs.dependency      'MBProgressHUD'

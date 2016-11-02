@@ -55,7 +55,8 @@ Pod::Spec.new do |spec|
         cs.prefix_header_contents = '#import <UIKit/UIKit.h>'
         cs.resources    = ['ELUnion/ELUIKit/Assets/ELShareActionSheetCell.xib',
         'ELUnion/ELUIKit/Assets/ELCommonBetSelectionView/*.xib',
-        'ELUnion/ELUIKit/Assets/ELScrollTitleCell.xib']
+        'ELUnion/ELUIKit/Assets/ELScrollTitleCell.xib','ELUnion/ELUIKit/Assets/*.lproj']
+
         cs.source_files =  ['ELUnion/ELUIKit/Classes/ConstantsColors.h',
         'ELUnion/ELUIKit/Classes/Category/*.{h,m}',
         'ELUnion/ELUIKit/Classes/VIEW/ELLoadingView.{h,m}',
@@ -78,11 +79,12 @@ Pod::Spec.new do |spec|
         'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELScrollTitleBar.{h,m}',
         'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELScrollTitleBarFlowLayout.{h,m}',
         'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELScrollTitleCell.{h,m}',
-        'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELContainerViewController.{h,m}']
+        'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/ELContainerViewController.{h,m}',
+        'ELUnion/ELUIKit/Classes/VIEWCONTROLLER/TOCropViewController/**/*.{h,m}']
+
         cs.dependency      'ELUnion/ELFoundation'
         cs.dependency      'SDWebImage'
         cs.dependency      'DYMRollingBanner', '~> 2.1.7'
-        cs.dependency      'TOCropViewController'
         cs.dependency      'MBProgressHUD'
         cs.dependency      'MJRefresh', '~> 3.1.10'
     end

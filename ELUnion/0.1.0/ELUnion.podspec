@@ -57,6 +57,6 @@ cs.dependency      'ELUnion/ELFoundation'
 cs.dependency      'SDWebImage'
 cs.dependency      'DYMRollingBanner', '~> 2.1.7'
 cs.dependency      'MBProgressHUD'
-cs.dependency      'MJRefresh', '~> 3.1.10'
+cs.dependency      'MJRefresh', '~> 3.1.10'     
 end
 end

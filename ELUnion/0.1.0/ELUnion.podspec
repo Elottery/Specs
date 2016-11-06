@@ -51,8 +51,12 @@ Pod::Spec.new do |spec|
 
     spec.subspec 'ELUIKit' do |cs|
         cs.prefix_header_contents = '#import <UIKit/UIKit.h>'
-        cs.resources    = ['ELUnion/ELUIKit/Assets/*.xib','ELUnion/ELUIKit/Assets/*.lproj']
+#cs.resources    = ['ELUnion/ELUIKit/Assets/*.lproj']
+        cs.resource_bundles = {'Imgs'   => ['ELUnion/ELUIKit/Assets/Images/*'],
+                               'Others' => ['ELUnion/ELUIKit/Assets/Xib/*'],
+                               'Strings'=> ['ELUnion/ELUIKit/Assets/Strings/*']}
         cs.source_files =  ['ELUnion/ELUIKit/Classes/**/*.{h,m}']
+        cs.private_header_files = ['ELUnion/ELUIKit/Classes/Category/ELBundleHelper.h']
         cs.dependency      'ELUnion/ELFoundation'
         cs.dependency      'SDWebImage'
         cs.dependency      'DYMRollingBanner', '~> 2.1.7'

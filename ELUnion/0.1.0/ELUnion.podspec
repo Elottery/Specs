@@ -54,7 +54,7 @@ Pod::Spec.new do |spec|
 #cs.resources    = ['ELUnion/ELUIKit/Assets/*.lproj']
         cs.resource_bundles = {'Imgs'   => ['ELUnion/ELUIKit/Assets/Images/*'],
                                'Others' => ['ELUnion/ELUIKit/Assets/Xib/*'],
-                               'Strings'=> ['ELUnion/ELUIKit/Assets/Strings/*']}
+                               'TOCropViewControllerBundle'=> ['ELUnion/ELUIKit/Assets/Strings/*']}
         cs.source_files =  ['ELUnion/ELUIKit/Classes/**/*.{h,m}']
         cs.private_header_files = ['ELUnion/ELUIKit/Classes/Category/ELBundleHelper.h']
         cs.dependency      'ELUnion/ELFoundation'

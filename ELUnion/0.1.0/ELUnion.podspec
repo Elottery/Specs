@@ -34,7 +34,6 @@ Pod::Spec.new do |spec|
             css.library = 'WeChatSDK'
             css.preserve_paths = 'ELUnion/ELFoundation/Lib/libWeChatSDK.a'
             css.vendored_library  = 'ELUnion/ELFoundation/Lib/libWeChatSDK.a'
-#css.user_target_xcconfig = {'LIBRARY_SEARCH_PATHS' => '${POD_ROOT}/ELUnion/ELUnion/ELFoundation/Lib'}
         end
         cs.subspec 'BaiduMob' do |css|
             css.library = 'BaiduMobStat'
@@ -49,7 +48,6 @@ Pod::Spec.new do |spec|
     end
     spec.subspec 'ELUIKit' do |cs|
         cs.prefix_header_contents = '#import <UIKit/UIKit.h>'
-#cs.resources    = ['ELUnion/ELUIKit/Assets/*.lproj']
         cs.resource_bundles = {'Imgs'   => ['ELUnion/ELUIKit/Assets/Images/*'],
                                'Others' => ['ELUnion/ELUIKit/Assets/Xib/*'],
                                'TOCropViewControllerBundle'=> ['ELUnion/ELUIKit/Assets/Strings/*']}

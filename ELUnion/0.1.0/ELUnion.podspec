@@ -25,30 +25,28 @@ Pod::Spec.new do |spec|
         cs.dependency 'CocoaAsyncSocket', '~> 7.5.0'
         cs.dependency 'ELUnion/ThirdLib'
     end
-
     spec.subspec 'ThirdLib' do |cs|
-        cs.frameworks = 'SystemConfiguration','CoreGraphics','CoreTelephony','Security','CoreLocation','JavaScriptCore','CoreData','CFNetwork'
+        cs.frameworks = 'SystemConfiguration','CoreGraphics','CoreTelephony','Security','CoreLocation','JavaScriptCore','CoreData','CFNetwork','UIKit','Foundation'
         cs.libraries  = 'iconv','sqlite3','stdc++','z'
-
+        cs.xcconfig = {'OTHER_LDFLAGS' => '-force_load'}
         cs.subspec 'Wechat' do |css|
-        css.source_files = ['ELUnion/ELFoundation/Lib/WXApi.h','ELUnion/ELFoundation/Lib/WechatAuthSDK.h','ELUnion/ELFoundation/Lib/WXApiObject.h']
-        css.library = 'WeChatSDK'
-        css.preserve_paths = 'ELUnion/ELFoundation/Lib/libWeChatSDK.a'
-        css.vendored_library  = 'ELUnion/ELFoundation/Lib/libWeChatSDK.a'
-        css.user_target_xcconfig = {'LIBRARY_SEARCH_PATHS' => '${POD_ROOT}/ELUnion/ELUnion/ELFoundation/Lib'}
+            css.source_files = ['ELUnion/ELFoundation/Lib/WXApi.h','ELUnion/ELFoundation/Lib/WechatAuthSDK.h','ELUnion/ELFoundation/Lib/WXApiObject.h']
+            css.library = 'WeChatSDK'
+            css.preserve_paths = 'ELUnion/ELFoundation/Lib/libWeChatSDK.a'
+            css.vendored_library  = 'ELUnion/ELFoundation/Lib/libWeChatSDK.a'
+#css.user_target_xcconfig = {'LIBRARY_SEARCH_PATHS' => '${POD_ROOT}/ELUnion/ELUnion/ELFoundation/Lib'}
         end
         cs.subspec 'BaiduMob' do |css|
-        css.library = 'BaiduMobStat'
-        css.source_files = 'ELUnion/ELFoundation/Lib/BaiduMobStat.h'
-        css.preserve_paths = 'ELUnion/ELFoundation/Lib/libBaiduMobStat.a'
-        css.vendored_library  = 'ELUnion/ELFoundation/Lib/libBaiduMobStat.a'
-        end
+            css.library = 'BaiduMobStat'
+            css.source_files = 'ELUnion/ELFoundation/Lib/BaiduMobStat.h'
+            css.preserve_paths = 'ELUnion/ELFoundation/Lib/libBaiduMobStat.a'
+            css.vendored_library  = 'ELUnion/ELFoundation/Lib/libBaiduMobStat.a'
+            end
         cs.subspec 'Tencent' do |css|
-        css.preserve_paths = 'ELUnion/ELFoundation/Lib/TencentOpenAPI.framework'
-        css.vendored_frameworks = 'ELUnion/ELFoundation/Lib/TencentOpenAPI.framework'
+            css.preserve_paths = 'ELUnion/ELFoundation/Lib/TencentOpenAPI.framework'
+            css.vendored_frameworks = 'ELUnion/ELFoundation/Lib/TencentOpenAPI.framework'
         end
     end
-
     spec.subspec 'ELUIKit' do |cs|
         cs.prefix_header_contents = '#import <UIKit/UIKit.h>'
 #cs.resources    = ['ELUnion/ELUIKit/Assets/*.lproj']
@@ -56,7 +54,9 @@ Pod::Spec.new do |spec|
                                'Others' => ['ELUnion/ELUIKit/Assets/Xib/*'],
                                'TOCropViewControllerBundle'=> ['ELUnion/ELUIKit/Assets/Strings/*']}
         cs.source_files =  ['ELUnion/ELUIKit/Classes/**/*.{h,m}']
-        cs.private_header_files = ['ELUnion/ELUIKit/Classes/Category/ELBundleHelper.h']
+        cs.private_header_files = ['ELUnion/ELUIKit/Classes/Category/ELBundleHelper.h',
+                                   'ELUnion/ELUIKit/Classes/VIEW/ELActionSheet/ELShareActionSheetCell.h',
+                                   'ELUnion/ELUIKit/Classes/VIEW/ELActionSheet/ELShareActionSheet.h']
         cs.dependency      'ELUnion/ELFoundation'
         cs.dependency      'SDWebImage'
         cs.dependency      'DYMRollingBanner', '~> 2.1.7'

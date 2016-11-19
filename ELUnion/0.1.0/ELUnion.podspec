@@ -19,7 +19,10 @@ Pod::Spec.new do |spec|
         cs.source_files = 'ELUnion/ELFoundation/Classes/**/*.{h,m}'
         cs.public_header_files = 'ELUnion/ELFoundation/Classes/**/*.{h}'
         cs.resources = ['ELUnion/ELFoundation/Classes/ELSocket/SocketDBModel.xcdatamodeld'];
-        cs.dependency 'AFNetworking', '~> 3.1.0'
+        cs.dependency 'AFNetworking/Serialization'
+        cs.dependency 'AFNetworking/Security'
+        cs.dependency 'AFNetworking/Reachability'
+        cs.dependency 'AFNetworking/NSURLSession'
         cs.dependency 'JSONModel', '~> 1.2.0'
         cs.dependency 'HYFileManager'
         cs.dependency 'CocoaAsyncSocket', '~> 7.5.0'
@@ -28,7 +31,6 @@ Pod::Spec.new do |spec|
     spec.subspec 'ThirdLib' do |cs|
         cs.frameworks = 'SystemConfiguration','CoreGraphics','CoreTelephony','Security','CoreLocation','JavaScriptCore','CoreData','CFNetwork','UIKit','Foundation'
         cs.libraries  = 'iconv','sqlite3','stdc++','z'
-        cs.xcconfig = {'OTHER_LDFLAGS' => '-force_load'}
         cs.subspec 'Wechat' do |css|
             css.source_files = ['ELUnion/ELFoundation/Lib/WXApi.h','ELUnion/ELFoundation/Lib/WechatAuthSDK.h','ELUnion/ELFoundation/Lib/WXApiObject.h']
             css.library = 'WeChatSDK'
